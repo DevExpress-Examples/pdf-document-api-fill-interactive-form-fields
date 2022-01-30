@@ -1,5 +1,7 @@
-﻿Namespace PdfFormFilling
-    Partial Public Class PdfFormFilling
+Namespace PdfFormFilling
+
+    Partial Class PdfFormFilling
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+'#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -38,10 +40,11 @@
             Me.btnFillFormData.TabIndex = 0
             Me.btnFillFormData.Text = "Fill Form Data"
             Me.btnFillFormData.UseVisualStyleBackColor = True
+            AddHandler Me.btnFillFormData.Click, New System.EventHandler(AddressOf Me.btnFillFormData_Click)
             ' 
             ' pdfViewer1
             ' 
-            Me.pdfViewer1.Anchor = (CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles))
+            Me.pdfViewer1.Anchor = CType(((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) Or System.Windows.Forms.AnchorStyles.Left) Or System.Windows.Forms.AnchorStyles.Right)), System.Windows.Forms.AnchorStyles)
             Me.pdfViewer1.Location = New System.Drawing.Point(353, 76)
             Me.pdfViewer1.Name = "pdfViewer1"
             Me.pdfViewer1.Size = New System.Drawing.Size(1025, 673)
@@ -55,6 +58,7 @@
             Me.btnGetFieldNames.TabIndex = 0
             Me.btnGetFieldNames.Text = "Get Field Names"
             Me.btnGetFieldNames.UseVisualStyleBackColor = True
+            AddHandler Me.btnGetFieldNames.Click, New System.EventHandler(AddressOf Me.btnGetFieldNames_Click)
             ' 
             ' richTextBox1
             ' 
@@ -76,15 +80,15 @@
             Me.Name = "PdfFormFilling"
             Me.Text = "PDF Form Filling"
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
+'#End Region
+        Private btnFillFormData As System.Windows.Forms.Button
 
-        Private WithEvents btnFillFormData As System.Windows.Forms.Button
         Private pdfViewer1 As DevExpress.XtraPdfViewer.PdfViewer
-        Private WithEvents btnGetFieldNames As System.Windows.Forms.Button
+
+        Private btnGetFieldNames As System.Windows.Forms.Button
+
         Private richTextBox1 As System.Windows.Forms.RichTextBox
     End Class
 End Namespace
-
