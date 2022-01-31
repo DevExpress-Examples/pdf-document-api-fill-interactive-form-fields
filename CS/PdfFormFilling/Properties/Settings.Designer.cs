@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PdfFormFilling.Properties
+namespace InteractiveFormFilling.Properties
 {
 
 
