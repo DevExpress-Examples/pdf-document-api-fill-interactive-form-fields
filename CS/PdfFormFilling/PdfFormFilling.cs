@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace PdfFormFilling {
+namespace InteractiveFormFilling {
 
     public partial class PdfFormFilling : Form {
         string filePath = Application.StartupPath + "\\..\\..\\";
