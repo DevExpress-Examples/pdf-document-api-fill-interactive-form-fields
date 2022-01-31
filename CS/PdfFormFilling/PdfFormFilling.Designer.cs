@@ -1,4 +1,4 @@
-﻿namespace PdfFormFilling
+namespace InteractiveFormFilling
 {
     partial class PdfFormFilling
     {
@@ -73,7 +73,7 @@
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             // 
-            // PdfFormFilling
+            // InteractiveFormFilling
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +82,7 @@
             this.Controls.Add(this.pdfViewer1);
             this.Controls.Add(this.btnGetFieldNames);
             this.Controls.Add(this.btnFillFormData);
-            this.Name = "PdfFormFilling";
+            this.Name = "InteractiveFormFilling";
             this.Text = "PDF Form Filling";
             this.ResumeLayout(false);
 

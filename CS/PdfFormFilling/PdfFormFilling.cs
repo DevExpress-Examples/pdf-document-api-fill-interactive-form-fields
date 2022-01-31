@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace PdfFormFilling {
+namespace InteractiveFormFilling {
 
     public partial class PdfFormFilling : Form {
 
