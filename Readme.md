@@ -29,3 +29,6 @@ Starting with v21.1, we recommend that you use the [PdfDocumentFacade](https://d
 - [PDF Document API - Obtain a Checked Appearance Name for a Check Box](https://github.com/DevExpress-Examples/how-to-obtain-a-checked-appearance-name-for-a-check-box-t609857)
 - [PDF Document API - Obtain a Checked Appearance Name for Each Radio Button in the Radio Group](https://github.com/DevExpress-Examples/how-to-obtain-a-checked-appearance-name-for-each-radio-button-in-the-radio-group-T622985)
 
+## Documentation
+
+[Interactive Forms in PDF Documents](https://docs.devexpress.com/OfficeFileAPI/118284/pdf-document-api/interactive-forms#fill-interactive-form-fields)
