@@ -3,30 +3,32 @@ using DevExpress.Pdf;
 using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
-using System.Windows.Forms;
 
-namespace InteractiveFormFilling {
+namespace InteractiveFormFilling
+{
 
-    public partial class PdfFormFilling : XtraForm {
+    public partial class PdfFormFilling : XtraForm
+    {
         string filePath = AppContext.BaseDirectory;
         string fileName = "FieldTypes";
 
-        public PdfFormFilling() {
+        public PdfFormFilling()
+        {
             InitializeComponent();
             pdfViewer1.LoadDocument(filePath + fileName + ".pdf");
         }
 
-        private void btnGetFieldNames_Click(object sender, EventArgs e) {
+        private void btnGetFieldNames_Click(object sender, EventArgs e)
+        {
             #region #GetFields
 
             // Load a document with an interactive form.
-            using (PdfDocumentProcessor documentProcessor = new PdfDocumentProcessor()) {
+            using (PdfDocumentProcessor documentProcessor = new PdfDocumentProcessor())
+            {
                 documentProcessor.LoadDocument(filePath + fileName + ".pdf");
 
                 // Get names of interactive form fields.
-                PdfFormData formData = documentProcessor.GetFormData();
-                IList<string> names = formData.GetFieldNames();
+                IList<string> names = documentProcessor.GetFormFieldNames();
 
                 // Show the field names in the rich text box.
                 string[] strings = new string[names.Count];
@@ -36,41 +38,38 @@ namespace InteractiveFormFilling {
             #endregion #GetFields
         }
 
-        private void btnFillFormData_Click(object sender, EventArgs e) {
+        private void btnFillFormData_Click(object sender, EventArgs e)
+        {
             #region #FillFields
 
             // Load a document with an interactive form.
-            using (PdfDocumentProcessor documentProcessor = new PdfDocumentProcessor()) {
+            using (PdfDocumentProcessor documentProcessor = new PdfDocumentProcessor())
+            {
                 documentProcessor.LoadDocument(filePath + fileName + ".pdf");
 
-                // Obtain interactive form data from a document.
-                PdfFormData formData = documentProcessor.GetFormData();
+                PdfDocumentFacade documentFacade = documentProcessor.DocumentFacade;
+                PdfAcroFormFacade acroForm = documentFacade.AcroForm;
 
-                // Specify the value for FirstName and LastName text boxes.
-                formData["FirstName"].Value = "Janet";
-                formData["LastName"].Value = "Leverling";
+                PdfTextFormFieldFacade nameField = acroForm.GetTextFormField("FirstName");
+                nameField.Value = "Janet";
 
-                // Specify the value for the Gender radio group.
-                formData["Gender"].Value = "Female";
+                PdfTextFormFieldFacade surnameField = acroForm.GetTextFormField("LastName");
+                surnameField.Value = "Leverling";
 
-                // Specify the check box checked appearance name.
-                formData["Check"].Value = "Yes";
+                PdfListBoxFormFieldFacade categoryField = acroForm.GetListBoxFormField("Category");
+                categoryField.Values = new List<string>() { "Entertainment", "Meals", "Morale" };
 
-                // Specify values for the Category list box.
-                formData["Category"].Value = new string[] { "Entertainment", "Meals", "Morale" };
+                PdfTextFormFieldFacade addressField = acroForm.GetTextFormField("Address.Address");
+                addressField.Value = "98033, 722 Moss Bay Blvd.";
 
-                // Obtain data from the Address form field and specify values for Address child form fields.
-                PdfFormData address = formData["Address"];
+                PdfRadioGroupFormFieldFacade genderField = acroForm.GetRadioGroupFormField("Gender");
+                genderField.Value = genderField.Field.Items[0].Value;
 
-                // Specify the value for the Country combo box. 
-                address["Country"].Value = "United States";
+                PdfComboBoxFormFieldFacade countryField = acroForm.GetComboBoxFormField("Address.Country");
+                countryField.Value = countryField.Items[0].Value;
 
-                // Specify the value for City and Address text boxes. 
-                address["City"].Value = "California";
-                address["Address"].Value = "20 Maple Avenue";
-
-                // Apply data to the interactive form. 
-                documentProcessor.ApplyFormData(formData);
+                PdfCheckBoxFormFieldFacade checkField = acroForm.GetCheckBoxFormField("Check");
+                checkField.IsChecked  = true;
 
                 // Save the modified document.
                 documentProcessor.SaveDocument(filePath + fileName + "_new.pdf");
@@ -81,7 +80,8 @@ namespace InteractiveFormFilling {
             #endregion #FillFields
         }
 
-        private void btnLoadFilledPDF_Click(object sender, EventArgs e) {
+        private void btnLoadFilledPDF_Click(object sender, EventArgs e)
+        {
 
             // Load  a document in the PDF Viewer.
             pdfViewer1.LoadDocument(filePath + fileName + "_new.pdf");

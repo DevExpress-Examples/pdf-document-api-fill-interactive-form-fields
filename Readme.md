@@ -9,21 +9,21 @@
 
 This example demonstrates how to retrieve a list of form field names and specify field values of an interactive form.
 
-> You need a license for the [DevExpress Office File API Subscription](https://www.devexpress.com/products/net/office-file-api/) or [DevExpress Universal Subscription](https://www.devexpress.com/subscriptions/universal.xml) to use this library in production code. 
+> [!IMPORTANT]
+> You need a license for the [DevExpress Office File API Subscription](https://www.devexpress.com/products/net/office-file-api/) or [DevExpress Universal Subscription](https://www.devexpress.com/subscriptions/universal.xml) to use this library in production code.
 
 ## Implementation Details
 
-1. Call the [PdfDocumentProcessor.LoadDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.LoadDocument.overloads) method to load a PDF document with an interactive form. 
-2. Call the [PdfDocumentProcessor.GetFormData](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.GetFormData) method to retrieve the [PdfFormData](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfFormData) object that contains interactive form data. 
+1. Call the [PdfDocumentProcessor.LoadDocument](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.LoadDocument.overloads) method to load a PDF document with an interactive form.
+2. Call the [PdfDocumentProcessor.GetFormFieldNames](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.GetFormFieldNames) method to retrieve a list of field names and iterate through the returned string collection.
 3. Specify the interactive form's field values. Call the [PdfDocumentProcessor.ApplyFormData](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.ApplyFormData(DevExpress.Pdf.PdfFormData)) method to apply data to the interactive form and save the PDF document.
-4. Call the [PdfDocumentProcessor.GetFormFieldNames](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentProcessor.GetFormFieldNames) method to retrieve a list of field names and iterate through the returned string collection.
+4. Use the [PdfDocumentFacade.AcroForm](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentFacade.AcroForm) property to get interactive form field options. These options allow you to change form fields and appearance properties.
 
-Starting with v21.1, we recommend that you use the [PdfDocumentFacade](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentFacade) class to change the PDF document without access to its inner structure. Use the [PdfDocumentFacade.AcroForm](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentFacade.AcroForm) property to get interactive form field options. These options allow you to change form fields and appearance properties. Refer to the following example for information on how to use the [PdfDocumentFacade](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentFacade) class: [PDF Document API - Change PDF Form Field Parameters](https://github.com/DevExpress-Examples/how-to-change-pdf-form-field-parameters).
+     Refer to the following example for information on how to use the [PdfDocumentFacade](https://docs.devexpress.com/OfficeFileAPI/DevExpress.Pdf.PdfDocumentFacade) class: [PDF Document API - Change PDF Form Field Parameters](https://github.com/DevExpress-Examples/how-to-change-pdf-form-field-parameters).
 
-<!-- default file list -->
-## Files to Look At
-[PdfFormFilling.cs](./CS/PdfFormFilling/PdfFormFilling.cs) (VB: [PdfFormFilling.vb](./VB/PdfFormFilling/PdfFormFilling.vb))
-<!-- default file list end -->
+## Files to Review
+
+* [PdfFormFilling.cs](./CS/PdfFormFilling/PdfFormFilling.cs) (VB: [PdfFormFilling.vb](./VB/PdfFormFilling/PdfFormFilling.vb))
 
 ## More Examples
 
