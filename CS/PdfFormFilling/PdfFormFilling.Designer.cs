@@ -28,77 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.btnFillFormData = new System.Windows.Forms.Button();
-            this.pdfViewer1 = new DevExpress.XtraPdfViewer.PdfViewer();
-            this.btnGetFieldNames = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnLoadFilledPDF = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            btnFillFormData = new System.Windows.Forms.Button();
+            pdfViewer1 = new DevExpress.XtraPdfViewer.PdfViewer();
+            btnGetFieldNames = new System.Windows.Forms.Button();
+            richTextBox1 = new System.Windows.Forms.RichTextBox();
+            btnLoadFilledPDF = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // btnFillFormData
             // 
-            this.btnFillFormData.Location = new System.Drawing.Point(215, 12);
-            this.btnFillFormData.Name = "btnFillFormData";
-            this.btnFillFormData.Size = new System.Drawing.Size(186, 55);
-            this.btnFillFormData.TabIndex = 0;
-            this.btnFillFormData.Text = "Fill Interactive Form";
-            this.btnFillFormData.UseVisualStyleBackColor = true;
-            this.btnFillFormData.Click += new System.EventHandler(this.btnFillFormData_Click);
+            btnFillFormData.Location = new System.Drawing.Point(466, 30);
+            btnFillFormData.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            btnFillFormData.Name = "btnFillFormData";
+            btnFillFormData.Size = new System.Drawing.Size(403, 135);
+            btnFillFormData.TabIndex = 0;
+            btnFillFormData.Text = "Fill Interactive Form";
+            btnFillFormData.UseVisualStyleBackColor = true;
+            btnFillFormData.Click += btnFillFormData_Click;
             // 
             // pdfViewer1
             // 
-            this.pdfViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pdfViewer1.Location = new System.Drawing.Point(353, 76);
-            this.pdfViewer1.Name = "pdfViewer1";
-            this.pdfViewer1.Size = new System.Drawing.Size(1025, 673);
-            this.pdfViewer1.TabIndex = 1;
+            pdfViewer1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            pdfViewer1.Location = new System.Drawing.Point(765, 187);
+            pdfViewer1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            pdfViewer1.Name = "pdfViewer1";
+            pdfViewer1.Size = new System.Drawing.Size(2221, 1657);
+            pdfViewer1.TabIndex = 1;
             // 
             // btnGetFieldNames
             // 
-            this.btnGetFieldNames.Location = new System.Drawing.Point(12, 12);
-            this.btnGetFieldNames.Name = "btnGetFieldNames";
-            this.btnGetFieldNames.Size = new System.Drawing.Size(186, 55);
-            this.btnGetFieldNames.TabIndex = 0;
-            this.btnGetFieldNames.Text = "Get Form Field Names";
-            this.btnGetFieldNames.UseVisualStyleBackColor = true;
-            this.btnGetFieldNames.Click += new System.EventHandler(this.btnGetFieldNames_Click);
+            btnGetFieldNames.Location = new System.Drawing.Point(26, 30);
+            btnGetFieldNames.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            btnGetFieldNames.Name = "btnGetFieldNames";
+            btnGetFieldNames.Size = new System.Drawing.Size(403, 135);
+            btnGetFieldNames.TabIndex = 0;
+            btnGetFieldNames.Text = "Get Form Field Names";
+            btnGetFieldNames.UseVisualStyleBackColor = true;
+            btnGetFieldNames.Click += btnGetFieldNames_Click;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 76);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(322, 408);
-            this.richTextBox1.TabIndex = 2;
-            this.richTextBox1.Text = "";
+            richTextBox1.Location = new System.Drawing.Point(26, 187);
+            richTextBox1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new System.Drawing.Size(693, 998);
+            richTextBox1.TabIndex = 2;
+            richTextBox1.Text = "";
             // 
             // btnLoadFilledPDF
             // 
-            this.btnLoadFilledPDF.Enabled = false;
-            this.btnLoadFilledPDF.Location = new System.Drawing.Point(420, 12);
-            this.btnLoadFilledPDF.Name = "btnLoadFilledPDF";
-            this.btnLoadFilledPDF.Size = new System.Drawing.Size(186, 55);
-            this.btnLoadFilledPDF.TabIndex = 3;
-            this.btnLoadFilledPDF.Text = "Load Document with Filled  Form ";
-            this.btnLoadFilledPDF.UseVisualStyleBackColor = true;
-            this.btnLoadFilledPDF.Click += new System.EventHandler(this.btnLoadFilledPDF_Click);
+            btnLoadFilledPDF.Enabled = false;
+            btnLoadFilledPDF.Location = new System.Drawing.Point(910, 30);
+            btnLoadFilledPDF.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            btnLoadFilledPDF.Name = "btnLoadFilledPDF";
+            btnLoadFilledPDF.Size = new System.Drawing.Size(403, 135);
+            btnLoadFilledPDF.TabIndex = 3;
+            btnLoadFilledPDF.Text = "Load Filled PDF";
+            btnLoadFilledPDF.UseVisualStyleBackColor = true;
+            btnLoadFilledPDF.Click += btnLoadFilledPDF_Click;
             // 
-            // InteractiveFormFilling
+            // PdfFormFilling
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1390, 767);
-            this.Controls.Add(this.btnLoadFilledPDF);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.pdfViewer1);
-            this.Controls.Add(this.btnGetFieldNames);
-            this.Controls.Add(this.btnFillFormData);
-            this.Name = "InteractiveFormFilling";
-            this.Text = "PDF Form Filling";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(3012, 1888);
+            Controls.Add(btnLoadFilledPDF);
+            Controls.Add(richTextBox1);
+            Controls.Add(pdfViewer1);
+            Controls.Add(btnGetFieldNames);
+            Controls.Add(btnFillFormData);
+            Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            Name = "PdfFormFilling";
+            Text = "PDF Form Filling";
+            ResumeLayout(false);
         }
 
         #endregion

@@ -1,13 +1,15 @@
 ﻿
 using DevExpress.Pdf;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace InteractiveFormFilling {
 
-    public partial class PdfFormFilling : Form {
-        string filePath = Application.StartupPath + "\\..\\..\\";
+    public partial class PdfFormFilling : XtraForm {
+        string filePath = AppContext.BaseDirectory;
         string fileName = "FieldTypes";
 
         public PdfFormFilling() {

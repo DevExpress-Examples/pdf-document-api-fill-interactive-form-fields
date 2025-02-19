@@ -1,4 +1,5 @@
 Imports DevExpress.Pdf
+Imports DevExpress.XtraEditors
 Imports System
 Imports System.Collections.Generic
 Imports System.Windows.Forms
@@ -6,9 +7,9 @@ Imports System.Windows.Forms
 Namespace InteractiveFormFilling
 
     Public Partial Class PdfFormFilling
-        Inherits Form
+        Inherits XtraForm
 
-        Private filePath As String = Application.StartupPath & "\..\..\"
+        Private filePath As String = AppContext.BaseDirectory
 
         Private fileName As String = "FieldTypes"
 
