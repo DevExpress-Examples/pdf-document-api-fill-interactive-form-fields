@@ -1,5 +1,5 @@
-Imports System
-Imports System.Windows.Forms
+Imports System.Linq
+Imports System.Threading.Tasks
 
 Namespace InteractiveFormFilling
 
@@ -10,9 +10,9 @@ Namespace InteractiveFormFilling
         ''' </summary>
         <STAThread>
         Sub Main()
-            Call Application.EnableVisualStyles()
+            Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
-            Call Application.Run(New PdfFormFilling())
+            Application.Run(New PdfFormFilling())
         End Sub
     End Module
 End Namespace
